@@ -55,18 +55,18 @@ export default function Header() {
               className="flex items-center gap-2 group relative z-60"
               id="logo-link"
             >
-              <div className="relative w-10 h-10 flex items-center justify-center">
+              {/* <div className="relative w-10 h-10 flex items-center justify-center">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                   <path d="M20 4L34.5 12V28L20 36L5.5 28V12L20 4Z" fill="var(--accent)" opacity="0.15" className="transition-all duration-300 group-hover:opacity-30" />
                   <path d="M20 4L34.5 12V28L20 36L5.5 28V12L20 4Z" stroke="var(--accent)" strokeWidth="1.5" fill="none" />
                   <text x="20" y="24" textAnchor="middle" fill="var(--accent)" fontSize="14" fontWeight="bold" fontFamily="var(--font-heading), system-ui">O</text>
                 </svg>
-              </div>
+              </div> */}
               <div className="flex flex-col leading-none">
                 <span className="font-bold text-lg tracking-tight" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}>
                   Orange<span className="gradient-text">Labs</span>
                 </span>
-                <span className="text-xs tracking-widest uppercase" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-heading)' }}>Digital</span>
+                <span className="text-xs tracking-widest uppercase" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-heading)' }}>Dev.</span>
               </div>
             </a>
 
@@ -77,7 +77,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-                  className="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 hover:text-accent"
+                  className="px-4 py-2 text-sm font-medium transition-all duration-300 hover:text-orange-500"
                   style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-heading)' }}
                 >
                   {link.label}
@@ -97,7 +97,7 @@ export default function Header() {
               <button
                 id="mobile-menu-toggle"
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="relative w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300"
+                className="relative w-10 h-10 flex items-center justify-center transition-all duration-300"
                 style={{
                   background: mobileOpen ? 'transparent' : 'var(--accent-glow)',
                   border: mobileOpen ? 'none' : '1px solid var(--glass-border)',
@@ -216,7 +216,7 @@ export default function Header() {
                 />
                 {/* Label */}
                 <span
-                  className="text-4xl font-bold tracking-tight transition-all duration-300 group-hover:text-accent group-hover:translate-x-2"
+                  className="text-4xl font-bold tracking-tight transition-all duration-300 group-hover:text-orange-500 group-hover:translate-x-2"
                   style={{ fontFamily: 'var(--font-heading)', color: 'rgba(255,255,255,0.85)' }}
                 >
                   {link.label}

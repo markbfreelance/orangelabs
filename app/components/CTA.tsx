@@ -6,86 +6,92 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="section-padding relative overflow-hidden"
-      style={{
-        background: 'var(--cta-bg)',
-        color: 'var(--cta-text)',
-      }}
+      className="relative overflow-hidden"
+      style={{ background: 'var(--accent)' }}
     >
-      {/* Orange accent line at top */}
-      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, var(--accent), transparent)' }} />
-
-      {/* Subtle pattern */}
-      <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.03 }}>
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(var(--cta-border) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+      {/* Grid overlay */}
+      <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.08 }}>
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'repeating-linear-gradient(90deg, rgba(0,0,0,0.2) 0px, rgba(0,0,0,0.2) 1px, transparent 1px, transparent 80px), repeating-linear-gradient(0deg, rgba(0,0,0,0.2) 0px, rgba(0,0,0,0.2) 1px, transparent 1px, transparent 80px)',
+        }} />
       </div>
 
-      {/* Orange corner glow */}
-      <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(255,102,0,0.1) 0%, transparent 70%)' }} />
-      <div className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(255,102,0,0.06) 0%, transparent 70%)' }} />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
         <ScrollReveal>
-          <span className="inline-block text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}>
-            Ready to Start?
-          </span>
-          <h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
-            style={{ fontFamily: 'var(--font-heading)', color: 'var(--cta-text)' }}
-          >
-            Let&apos;s Build Something{' '}
-            <span className="gradient-text">Extraordinary</span>
-          </h2>
-          <p
-            className="text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
-            style={{ color: 'var(--cta-text-secondary)' }}
-          >
-            Have a project in mind? We&apos;d love to hear about it. Get in touch and let&apos;s explore how Orange Labs can bring your vision to life.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="mailto:hello@orangelabs.digital"
-              className="btn-primary text-base px-10 py-4"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-              Get In Touch
-            </a>
-            <a
-              href="#services"
-              className="inline-flex items-center justify-center gap-2 px-10 py-4 text-base font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5"
-              style={{
-                fontFamily: 'var(--font-heading)',
-                border: '1px solid var(--cta-border)',
-                color: 'var(--cta-text)',
-                background: 'transparent',
-                letterSpacing: '0.02em',
-                textDecoration: 'none',
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--cta-border)'; e.currentTarget.style.color = 'var(--cta-text)'; }}
-            >
-              View Our Services
-            </a>
-          </div>
-
-          {/* Trust indicators */}
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm" style={{ color: 'var(--cta-text-muted)' }}>
-            {['Free Consultation', 'No Obligation Quote', 'Fast Response Time'].map((item) => (
-              <div key={item} className="flex items-center gap-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
-                {item}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-12">
+            {/* Left — big type */}
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-2.5 mb-6">
+                <span className="inline-block w-3 h-3" style={{ background: 'var(--bg-primary)' }} />
+                <span style={{ fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--bg-primary)', fontFamily: 'var(--font-heading)', opacity: 0.7 }}>Let&apos;s Talk</span>
               </div>
-            ))}
+              <h2
+                className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-none mb-6"
+                style={{ fontFamily: 'var(--font-heading)', color: 'var(--bg-primary)' }}
+              >
+                Have an idea?<br />
+                Let&apos;s make it real.
+              </h2>
+              <p
+                className="text-lg max-w-xl leading-relaxed"
+                style={{ color: 'var(--bg-primary)', opacity: 0.75 }}
+              >
+                Whether you need a full website, web app, or digital experience — we&apos;re ready to bring your vision to life. No fluff, just results.
+              </p>
+            </div>
+
+            {/* Right — actions */}
+            <div className="flex flex-col gap-4 lg:items-end shrink-0">
+              <a
+                href="mailto:hello@orangelabs.digital"
+                className="inline-flex items-center justify-center gap-3 px-10 py-5 font-bold transition-all duration-300 hover:translate-y-[-2px]"
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: '13px',
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  background: 'var(--bg-primary)',
+                  color: 'var(--accent)',
+                  textDecoration: 'none',
+                }}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Get In Touch
+              </a>
+              <a
+                href="#services"
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 font-bold transition-all duration-300 hover:bg-white/10"
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: '13px',
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  border: '1px solid var(--bg-primary)',
+                  color: 'var(--bg-primary)',
+                  background: 'transparent',
+                  textDecoration: 'none',
+                  opacity: 0.8,
+                }}
+              >
+                View Our Services
+              </a>
+
+              {/* Trust row */}
+              <div className="flex flex-wrap gap-6 mt-4" style={{ fontSize: '11px', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--bg-primary)', opacity: 0.6 }}>
+                {['Free Consultation', 'Fast Response', 'No Obligation'].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </ScrollReveal>
       </div>
-
-      {/* Bottom accent line */}
-      <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, var(--accent), transparent)' }} />
     </section>
   );
 }

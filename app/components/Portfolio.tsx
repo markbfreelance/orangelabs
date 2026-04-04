@@ -5,173 +5,218 @@ import ScrollReveal from './ScrollReveal';
 
 const projects = [
   {
-    title: 'NovaTech Solutions',
-    category: 'Web Application',
-    description: 'A comprehensive SaaS dashboard for managing cloud infrastructure with real-time analytics and monitoring.',
-    tags: ['React', 'Node.js', 'AWS'],
-    metric: '3x faster',
-    metricLabel: 'load time',
+    id: 1,
+    title: 'APEC Group',
+    category: 'Corporate',
+    description: 'Professional corporate website with modern design, responsive layout, and seamless CMS integration.',
+    tags: ['Next.js', 'Corporate', 'CMS'],
+    stat: '+200%',
+    statLabel: 'leads',
+    liveUrl: 'https://theapecgroup.com',
+    year: '2024',
   },
   {
-    title: 'Meridian Restaurant Group',
-    category: 'Website Modernization',
-    description: 'Complete overhaul of a legacy restaurant chain website into a modern, mobile-first platform with online ordering.',
-    tags: ['Next.js', 'Stripe', 'CMS'],
-    metric: '+180%',
-    metricLabel: 'online orders',
+    id: 2,
+    title: 'GeoPetroleum',
+    category: 'Industry',
+    description: 'B2B platform showcasing industry expertise with professional design optimized for engagement.',
+    tags: ['React', 'B2B', 'Professional'],
+    stat: '+150%',
+    statLabel: 'inquiries',
+    liveUrl: 'https://geopetroleum.com',
+    year: '2024',
   },
   {
-    title: 'Velox Fitness',
-    category: 'Landing Page',
-    description: 'High-converting promotional site for a fitness brand launch, featuring animated product showcases and lead capture.',
-    tags: ['Landing Page', 'Animation', 'CRO'],
-    metric: '12.4%',
-    metricLabel: 'conversion rate',
-  },
-  {
-    title: 'CraftBrew Commerce',
+    id: 3,
+    title: 'Candonkeys',
     category: 'E-Commerce',
-    description: 'Custom e-commerce platform for an artisan brewery with subscription management and delivery scheduling.',
-    tags: ['E-Commerce', 'Payments', 'CMS'],
-    metric: '+240%',
-    metricLabel: 'revenue growth',
+    description: 'Full e-commerce platform with product catalog, cart, and secure Stripe payment processing.',
+    tags: ['Next.js', 'E-Commerce', 'Stripe'],
+    stat: '+180%',
+    statLabel: 'revenue',
+    liveUrl: 'https://candonkeys.com',
+    year: '2024',
+  },
+  {
+    id: 4,
+    title: 'Metal Products USA',
+    category: 'Industrial',
+    description: 'Industrial catalog site with product specs and capabilities, optimized for B2B conversion.',
+    tags: ['React', 'Industrial', 'Catalog'],
+    stat: '+120%',
+    statLabel: 'quotes',
+    liveUrl: 'https://metalproductsusa.com',
+    year: '2023',
+  },
+  {
+    id: 5,
+    title: '5M Wellness Center',
+    category: 'Health',
+    description: 'Wellness platform with online booking, practitioner profiles, and calming design aesthetic.',
+    tags: ['Next.js', 'Booking', 'Wellness'],
+    stat: '+85%',
+    statLabel: 'bookings',
+    liveUrl: 'https://5mwellnesscenter.vercel.app',
+    year: '2024',
+  },
+  {
+    id: 6,
+    title: 'My Petro Parts',
+    category: 'E-Commerce',
+    description: 'Automotive parts marketplace with advanced search and inventory management.',
+    tags: ['React', 'Automotive', 'Search'],
+    stat: '+165%',
+    statLabel: 'orders',
+    liveUrl: 'https://mypetroparts.vercel.app',
+    year: '2023',
+  },
+  {
+    id: 7,
+    title: 'Grit Digital',
+    category: 'Professional',
+    description: 'Agency site with case studies and client testimonials for a digital performance company.',
+    tags: ['Next.js', 'Corporate', 'B2B'],
+    stat: '+95%',
+    statLabel: 'inquiries',
+    liveUrl: 'https://gritdp.com',
+    year: '2024',
   },
 ];
 
 export default function Portfolio() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   return (
     <section
       id="portfolio"
-      className="section-padding section-divider"
+      className="section-padding relative overflow-hidden"
       style={{ background: 'var(--bg-secondary)' }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header - centered with accent */}
-        <ScrollReveal className="text-center mb-16">
-          <span className="inline-block text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}>
-            Our Work
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-            Featured <span className="gradient-text">Projects</span>
-          </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-            Real results from real clients. Each project tells a story of transformation and growth.
-          </p>
+      <div className="ol-grid-lines" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <ScrollReveal>
+          <div className="mb-20">
+            <div className="flex items-center gap-2.5 mb-6">
+              <span className="inline-block w-3 h-3" style={{ background: 'var(--accent)' }} />
+              <span style={{ fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}>Selected Work</span>
+            </div>
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-none" style={{ fontFamily: 'var(--font-heading)' }}>
+                Real projects.<br />
+                <span className="gradient-text">Real results.</span>
+              </h2>
+              <p className="text-base max-w-md leading-relaxed lg:text-right" style={{ color: 'var(--text-secondary)' }}>
+                Every URL below is a live site we built. Shipped, measured, and delivering value for our clients.
+              </p>
+            </div>
+          </div>
         </ScrollReveal>
 
-        {/* Accordion-style project cards */}
-        <ScrollReveal>
-          <div className="flex flex-col gap-3">
-            {projects.map((project, i) => {
-              const isExpanded = expandedIndex === i;
-              return (
-                <div
-                  key={project.title}
-                  className="rounded-2xl overflow-hidden cursor-pointer transition-all duration-500"
-                  style={{
-                    background: isExpanded ? 'var(--glass-bg)' : 'transparent',
-                    border: `1px solid ${isExpanded ? 'var(--accent)' : 'var(--border-color)'}`,
-                    boxShadow: isExpanded ? '0 0 30px var(--accent-glow)' : 'none',
-                  }}
-                  onClick={() => setExpandedIndex(isExpanded ? null : i)}
-                >
-                  {/* Header row - always visible */}
-                  <div className="flex items-center gap-4 sm:gap-8 px-6 sm:px-8 py-5">
-                    {/* Project number */}
-                    <span
-                      className="text-sm font-bold shrink-0 transition-colors duration-300"
-                      style={{
-                        color: isExpanded ? 'var(--accent)' : 'var(--text-muted)',
-                        fontFamily: 'var(--font-heading)',
-                        minWidth: '28px',
-                      }}
-                    >
-                      0{i + 1}
-                    </span>
+        {/* Project List — Case Study Style */}
+        <div className="flex flex-col">
+          {projects.map((project, i) => (
+            <ScrollReveal key={project.id} delay={i * 0.05}>
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block py-8 sm:py-10 transition-all duration-500 cursor-pointer"
+                style={{ borderTop: '1px solid rgba(255, 102, 0, 0.1)' }}
+                onMouseEnter={() => setHoveredProject(project.id)}
+                onMouseLeave={() => setHoveredProject(null)}
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+                  {/* Number */}
+                  <span
+                    className="number-stroke text-5xl sm:text-6xl font-black shrink-0 w-20 transition-all duration-500"
+                    style={{
+                      WebkitTextStrokeColor: hoveredProject === project.id ? 'var(--accent)' : undefined,
+                    }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
 
-                    {/* Title + category */}
-                    <div className="flex-1 min-w-0">
-                      <h3
-                        className="text-lg sm:text-xl font-bold truncate transition-colors duration-300"
+                  {/* Title + Category */}
+                  <div className="flex-1 min-w-0">
+                    <h3
+                      className="text-3xl sm:text-4xl lg:text-5xl font-bold transition-colors duration-300 group-hover:text-accent leading-tight"
+                      style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}
+                    >
+                      {project.title}
+                    </h3>
+                    <p className="text-sm mt-2 leading-relaxed max-w-lg hidden sm:block" style={{ color: 'var(--text-secondary)' }}>
+                      {project.description}
+                    </p>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="hidden lg:flex flex-wrap gap-2 max-w-xs justify-end">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 text-xs font-medium"
                         style={{
+                          border: '1px solid rgba(255,102,0,0.15)',
+                          color: 'var(--text-muted)',
                           fontFamily: 'var(--font-heading)',
-                          color: isExpanded ? 'var(--accent)' : 'var(--text-primary)',
+                          letterSpacing: '0.05em',
+                          textTransform: 'uppercase',
                         }}
                       >
-                        {project.title}
-                      </h3>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Stat + Arrow */}
+                  <div className="flex items-center gap-6 shrink-0">
+                    <div className="text-right hidden sm:block">
+                      <div className="text-2xl font-bold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent)' }}>
+                        {project.stat}
+                      </div>
+                      <div className="text-xs uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>
+                        {project.statLabel}
+                      </div>
                     </div>
-
-                    {/* Category badge */}
-                    <span
-                      className="hidden sm:inline-block text-xs font-medium px-3 py-1 rounded-full shrink-0"
-                      style={{
-                        background: 'var(--accent-glow)',
-                        color: 'var(--accent)',
-                        fontFamily: 'var(--font-heading)',
-                      }}
-                    >
-                      {project.category}
-                    </span>
-
-                    {/* Expand icon */}
                     <div
-                      className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500"
-                      style={{
-                        background: isExpanded ? 'var(--accent)' : 'var(--accent-glow)',
-                        transform: isExpanded ? 'rotate(45deg)' : 'rotate(0deg)',
-                      }}
+                      className="w-12 h-12 flex items-center justify-center transition-all duration-300 group-hover:bg-accent shrink-0"
+                      style={{ border: '1px solid rgba(255,102,0,0.2)' }}
                     >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={isExpanded ? 'white' : 'var(--accent)'} strokeWidth="2.5" strokeLinecap="round">
-                        <path d="M12 5v14M5 12h14" />
+                      <svg
+                        width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke={hoveredProject === project.id ? 'var(--bg-primary)' : 'var(--accent)'}
+                        strokeWidth="2" strokeLinecap="round"
+                        className="transition-transform duration-300 group-hover:-rotate-45"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
                     </div>
                   </div>
-
-                  {/* Expanded content */}
-                  <div
-                    className="overflow-hidden transition-all duration-500"
-                    style={{
-                      maxHeight: isExpanded ? '300px' : '0',
-                      opacity: isExpanded ? 1 : 0,
-                    }}
-                  >
-                    <div className="px-6 sm:px-8 pb-8 grid grid-cols-1 sm:grid-cols-12 gap-6" style={{ paddingLeft: 'calc(28px + 2rem)' }}>
-                      {/* Description */}
-                      <div className="sm:col-span-7">
-                        <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
-                          {project.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="text-xs px-2.5 py-1 rounded-md font-medium"
-                              style={{ background: 'var(--accent-glow)', color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      {/* Metric */}
-                      <div className="sm:col-span-5 flex items-center justify-start sm:justify-end">
-                        <div className="text-right">
-                          <div className="text-4xl sm:text-5xl font-black gradient-text" style={{ fontFamily: 'var(--font-heading)' }}>
-                            {project.metric}
-                          </div>
-                          <div className="text-xs uppercase tracking-wider mt-1" style={{ color: 'var(--text-muted)' }}>
-                            {project.metricLabel}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              );
-            })}
+              </a>
+            </ScrollReveal>
+          ))}
+          {/* Bottom border */}
+          <div style={{ borderTop: '1px solid rgba(255, 102, 0, 0.1)' }} />
+        </div>
+
+        {/* Bottom stat */}
+        <ScrollReveal className="mt-16">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-8 py-8" style={{ borderTop: '1px solid rgba(255,102,0,0.12)' }}>
+            <div className="flex items-center gap-6">
+              <span className="text-6xl sm:text-7xl font-black" style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent)' }}>
+                {projects.length}
+              </span>
+              <div>
+                <div className="text-lg font-bold" style={{ fontFamily: 'var(--font-heading)' }}>Projects shipped</div>
+                <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>and counting</div>
+              </div>
+            </div>
+            <a href="#contact" className="btn-primary px-10 py-4">
+              Start Your Project
+            </a>
           </div>
         </ScrollReveal>
       </div>

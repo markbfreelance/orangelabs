@@ -4,123 +4,97 @@ import ScrollReveal from './ScrollReveal';
 
 const services = [
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-        <path d="M8 21h8M12 17v4" />
-      </svg>
-    ),
-    title: 'Custom Web Development',
-    description: 'Bespoke, high-performance web applications built with cutting-edge technology. Scalable architecture designed to grow with your business.',
+    title: 'Web Development',
+    short: 'Build',
+    description: 'Bespoke web applications with cutting-edge tech. Scalable architecture that grows with your business.',
     num: '01',
+    span: 'lg:col-span-2',
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
-        <circle cx="12" cy="13" r="4" />
-      </svg>
-    ),
-    title: 'Website Modernization',
-    description: 'Transform your outdated website into a lightning-fast, mobile-first experience. We breathe new life into legacy platforms without losing your brand.',
+    title: 'Site Modernization',
+    short: 'Evolve',
+    description: 'Transform legacy platforms into lightning-fast, mobile-first experiences.',
     num: '02',
+    span: '',
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-        <path d="M8 10h8M8 14h4" />
-      </svg>
-    ),
-    title: 'Landing Pages & Promotions',
-    description: 'High-converting, single-page marketing sites that capture attention and drive action. Perfect for campaigns, product launches, and lead generation.',
+    title: 'Landing Pages',
+    short: 'Convert',
+    description: 'High-converting pages that capture attention and drive action.',
     num: '03',
+    span: '',
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" />
-        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" />
-      </svg>
-    ),
-    title: 'E-Commerce Solutions',
-    description: 'Online stores built for conversion and scale. Seamless shopping experiences with secure payments, inventory management, and analytics built in.',
+    title: 'E-Commerce',
+    short: 'Sell',
+    description: 'Online stores built for conversion. Seamless shopping with secure payments and analytics.',
     num: '04',
+    span: '',
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
-      </svg>
-    ),
-    title: 'Maintenance & Support',
-    description: 'Ongoing care to keep your digital presence running at peak performance. Security updates, performance tuning, and priority tech support when you need it.',
+    title: 'Maintenance',
+    short: 'Sustain',
+    description: 'Ongoing care — security updates, performance tuning, and priority support.',
     num: '05',
+    span: 'lg:col-span-2',
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="section-padding section-divider" style={{ background: 'var(--bg-secondary)' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
+    <section id="services" className="section-padding relative overflow-hidden" style={{ background: 'var(--bg-primary)' }}>
+      <div className="ol-grid-lines" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <ScrollReveal>
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
-            <div>
-              <span className="inline-block text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}>What We Do</span>
-              <h2 className="text-4xl sm:text-5xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
-                Services That <span className="gradient-text">Transform</span>
-              </h2>
+          <div className="mb-20">
+            <div className="flex items-center gap-2.5 mb-6">
+              <span className="inline-block w-3 h-3" style={{ background: 'var(--accent)' }} />
+              <span style={{ fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}>What We Do</span>
             </div>
-            <p className="text-lg max-w-md leading-relaxed lg:text-right" style={{ color: 'var(--text-secondary)' }}>
-              Every solution we build is tailored to your goals — blending strategy, design, and engineering.
-            </p>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-none" style={{ fontFamily: 'var(--font-heading)' }}>
+              We don&apos;t just build websites.
+              <br />
+              <span className="gradient-text">We build growth engines.</span>
+            </h2>
           </div>
         </ScrollReveal>
 
-        {/* Service rows */}
-        <div className="flex flex-col">
+        {/* Bento Grid */}
+        <div className="bento-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
-            <ScrollReveal key={service.title} delay={i * 0.08}>
-              <div
-                className="group flex items-start sm:items-center gap-6 sm:gap-8 py-8 transition-all duration-500 cursor-default"
-                style={{ borderTop: '1px solid var(--border-color)' }}
-              >
-                {/* Number */}
-                <span
-                  className="text-sm font-bold shrink-0 mt-1 sm:mt-0 transition-colors duration-300 group-hover:text-accent"
-                  style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', minWidth: '28px' }}
-                >
+            <ScrollReveal key={service.title} delay={i * 0.06}>
+              <div className={`bento-card group cursor-default ${service.span}`}>
+                {/* Large stroke number */}
+                <div className="number-stroke text-7xl sm:text-8xl font-black absolute top-4 right-6 group-hover:![-webkit-text-stroke-color:var(--accent)] transition-all duration-500" style={{ opacity: 0.5 }}>
                   {service.num}
-                </span>
-
-                {/* Icon */}
-                <div
-                  className="hidden sm:flex w-14 h-14 rounded-xl items-center justify-center shrink-0 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
-                  style={{ background: 'var(--accent-glow)', border: '1px solid rgba(255,102,0,0.15)', color: 'var(--accent)' }}
-                >
-                  {service.icon}
                 </div>
 
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-xl sm:text-2xl font-bold transition-colors duration-300 group-hover:text-accent" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}>
+                <div className="relative z-10">
+                  <span
+                    className="inline-block text-xs font-bold tracking-widest uppercase mb-3 transition-colors duration-300"
+                    style={{ color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}
+                  >
+                    {service.short}
+                  </span>
+                  <h3
+                    className="text-2xl sm:text-3xl font-bold mb-3 transition-colors duration-300 group-hover:text-white"
+                    style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}
+                  >
                     {service.title}
                   </h3>
-                  <p className="text-sm leading-relaxed mt-1 max-w-xl" style={{ color: 'var(--text-secondary)' }}>
+                  <p className="text-sm leading-relaxed max-w-md" style={{ color: 'var(--text-secondary)' }}>
                     {service.description}
                   </p>
                 </div>
 
-                {/* Arrow */}
-                <div className="hidden lg:flex shrink-0 w-10 h-10 rounded-full items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0" style={{ background: 'var(--accent-glow)', border: '1px solid rgba(255,102,0,0.2)' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                {/* Hover arrow */}
+                <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"><path d="M7 17L17 7M17 7H7M17 7v10" /></svg>
                 </div>
               </div>
             </ScrollReveal>
           ))}
-          {/* Bottom border */}
-          <div style={{ borderTop: '1px solid var(--border-color)' }} />
         </div>
       </div>
     </section>
