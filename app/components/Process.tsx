@@ -67,9 +67,9 @@ export default function Process() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px" style={{ background: 'rgba(255,102,0,0.08)' }}>
           {steps.map((step, i) => (
             <ScrollReveal key={step.number} delay={i * 0.08}>
-              <div className="group relative bg-[var(--bg-primary)] p-8 sm:p-10 h-full flex flex-col transition-all duration-500 hover:bg-[var(--bg-secondary)]">
+              <div className="group relative bg-bg-primary p-8 sm:p-10 h-full flex flex-col transition-all duration-500 hover:bg-bg-secondary">
                 {/* Number */}
-                <span className="number-stroke text-6xl font-black mb-6 block transition-all duration-500 group-hover:![-webkit-text-stroke-color:var(--accent)]">
+                <span className="number-stroke text-6xl font-black mb-6 block transition-all duration-500 group-hover:[-webkit-text-stroke-color:var(--accent)]!">
                   {step.number}
                 </span>
 

@@ -66,7 +66,7 @@ export default function Services() {
             <ScrollReveal key={service.title} delay={i * 0.06}>
               <div className={`bento-card group cursor-default ${service.span}`}>
                 {/* Large stroke number */}
-                <div className="number-stroke text-7xl sm:text-8xl font-black absolute top-4 right-6 group-hover:![-webkit-text-stroke-color:var(--accent)] transition-all duration-500" style={{ opacity: 0.5 }}>
+                <div className="number-stroke text-7xl sm:text-8xl font-black absolute top-4 right-6 group-hover:[-webkit-text-stroke-color:var(--accent)]! transition-all duration-500" style={{ opacity: 0.5 }}>
                   {service.num}
                 </div>
 
