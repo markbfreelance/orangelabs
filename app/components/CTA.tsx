@@ -43,7 +43,7 @@ export default function CTA() {
             {/* Right — actions */}
             <div className="flex flex-col gap-4 lg:items-end shrink-0">
               <a
-                href="mailto:hello@orangelabs.digital"
+                href="mailto:markb.freelance@gmail.com"
                 className="inline-flex items-center justify-center gap-3 px-10 py-5 font-bold transition-all duration-300 hover:translate-y-[-2px]"
                 style={{
                   fontFamily: 'var(--font-heading)',
