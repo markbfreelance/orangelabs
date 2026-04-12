@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "./components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
@@ -9,15 +9,16 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Orange Labs Digital — Premium Web Development & Design",
+  title: "Orange Labs — We Build Digital That Hits Different",
   description:
-    "We build high-performance websites, modern web applications, and stunning landing pages that drive real business results. Custom web development, site modernization, and UI/UX design by Orange Labs.",
+    "High-impact websites, web apps, and digital experiences. We don't do templates. Orange Labs builds custom digital products that drive revenue and turn heads.",
   keywords: [
     "web development",
     "website design",
@@ -29,18 +30,18 @@ export const metadata: Metadata = {
     "digital agency",
   ],
   openGraph: {
-    title: "Orange Labs Digital — Premium Web Development & Design",
+    title: "Orange Labs — We Build Digital That Hits Different",
     description:
-      "We craft digital experiences that drive results. Custom web development, site modernization, and high-converting landing pages.",
-    siteName: "Orange Labs Digital",
+      "High-impact websites, web apps, and digital experiences that drive revenue and turn heads.",
+    siteName: "Orange Labs",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Orange Labs Digital — Premium Web Development & Design",
+    title: "Orange Labs — We Build Digital That Hits Different",
     description:
-      "We craft digital experiences that drive results. Custom web development, site modernization, and high-converting landing pages.",
+      "High-impact websites, web apps, and digital experiences that drive revenue and turn heads.",
   },
 };
 
@@ -53,7 +54,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="dark"
-      className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
+      className={`${inter.variable} ${syne.variable} antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-screen flex flex-col">

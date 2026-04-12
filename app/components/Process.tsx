@@ -3,105 +3,75 @@
 import ScrollReveal from './ScrollReveal';
 
 const steps = [
-  {
-    number: '01',
-    title: 'Discover',
-    verb: 'Listen',
-    description: 'Your goals, audience, and landscape — mapped out before we touch a pixel.',
-  },
-  {
-    number: '02',
-    title: 'Design',
-    verb: 'Craft',
-    description: 'Wireframes to high-fidelity mockups. You see the journey before code begins.',
-  },
-  {
-    number: '03',
-    title: 'Develop',
-    verb: 'Build',
-    description: 'Modern tech, iterative sprints. You stay in the loop every step of the way.',
-  },
-  {
-    number: '04',
-    title: 'Deploy',
-    verb: 'Ship',
-    description: 'Testing, optimization, and seamless launch. Zero-downtime go-live.',
-  },
-  {
-    number: '05',
-    title: 'Support',
-    verb: 'Grow',
-    description: 'Monitoring, analytics, and ongoing iteration to keep you ahead.',
-  },
+  { num: '01', title: 'Discover', description: 'Your goals, audience, and landscape — mapped out before we touch a pixel.' },
+  { num: '02', title: 'Design', description: 'Wireframes to high-fidelity mockups. You see the journey before code begins.' },
+  { num: '03', title: 'Develop', description: 'Modern tech, iterative sprints. You stay in the loop every step.' },
+  { num: '04', title: 'Deploy', description: 'Testing, optimization, and seamless launch. Zero-downtime go-live.' },
+  { num: '05', title: 'Support', description: 'Monitoring, analytics, and ongoing iteration to keep you ahead.' },
 ];
 
 export default function Process() {
   return (
-    <section
-      id="process"
-      className="section-padding relative overflow-hidden"
-      style={{ background: 'var(--bg-primary)' }}
-    >
-      <div className="ol-grid-lines" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+    <section id="process" className="section-padding relative overflow-hidden" style={{ background: 'var(--bg-secondary)' }}>
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
         <ScrollReveal>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-20">
-            <div>
-              <div className="flex items-center gap-2.5 mb-6">
-                <span className="inline-block w-3 h-3" style={{ background: 'var(--accent)' }} />
-                <span style={{ fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}>How It Works</span>
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-3 h-3" style={{ background: 'var(--accent)' }} />
+                <span className="text-xs tracking-[0.3em] uppercase" style={{ color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}>How It Works</span>
               </div>
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-none" style={{ fontFamily: 'var(--font-heading)' }}>
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1]" style={{ fontFamily: 'var(--font-heading)' }}>
                 Five steps to<br />
                 <span className="gradient-text">your next launch.</span>
               </h2>
             </div>
             <p className="text-base max-w-sm leading-relaxed lg:text-right" style={{ color: 'var(--text-secondary)' }}>
-              A proven framework that takes you from &ldquo;idea&rdquo; to &ldquo;shipped&rdquo; — fast, transparent, and collaborative.
+              A proven framework that takes you from idea to shipped — fast, transparent, and collaborative.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px" style={{ background: 'rgba(255,102,0,0.08)' }}>
-          {steps.map((step, i) => (
-            <ScrollReveal key={step.number} delay={i * 0.08}>
-              <div className="group relative bg-bg-primary p-8 sm:p-10 h-full flex flex-col transition-all duration-500 hover:bg-bg-secondary">
-                {/* Number */}
-                <span className="number-stroke text-6xl font-black mb-6 block transition-all duration-500 group-hover:[-webkit-text-stroke-color:var(--accent)]!">
-                  {step.number}
-                </span>
+        {/* Steps */}
+        <div className="relative">
+          {/* Vertical line */}
+          <div className="hidden lg:block absolute left-[28px] top-0 bottom-0 w-px" style={{ background: 'var(--border-color)' }} />
 
-                {/* Verb tag */}
-                <span
-                  className="inline-block self-start text-xs font-bold tracking-widest uppercase mb-3 px-3 py-1 transition-all duration-300"
-                  style={{ background: 'var(--accent-glow)', color: 'var(--accent)', fontFamily: 'var(--font-heading)', border: '1px solid rgba(255,102,0,0.15)' }}
-                >
-                  {step.verb}
-                </span>
+          <div className="flex flex-col gap-0">
+            {steps.map((step, i) => (
+              <ScrollReveal key={step.num} delay={i * 0.08}>
+                <div className="group relative flex items-start gap-8 lg:gap-12 py-10 border-b transition-all duration-500" style={{ borderColor: 'var(--border-color)' }}>
+                  {/* Number circle */}
+                  <div className="relative z-10 shrink-0 w-14 h-14 flex items-center justify-center transition-all duration-500 group-hover:scale-110" style={{
+                    border: '2px solid var(--border-color)',
+                    background: 'var(--bg-secondary)',
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    color: 'var(--text-muted)',
+                  }}>
+                    <span className="transition-colors duration-300 group-hover:text-[var(--accent)]">{step.num}</span>
+                  </div>
 
-                {/* Title */}
-                <h3
-                  className="text-2xl font-bold mb-3 transition-colors duration-300 group-hover:text-accent"
-                  style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}
-                >
-                  {step.title}
-                </h3>
+                  <div className="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                      <h3 className="text-3xl sm:text-4xl font-extrabold mb-2 transition-colors duration-300 group-hover:text-[var(--accent)]" style={{ fontFamily: 'var(--font-heading)' }}>
+                        {step.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed max-w-md" style={{ color: 'var(--text-secondary)' }}>
+                        {step.description}
+                      </p>
+                    </div>
 
-                {/* Description */}
-                <p className="text-sm leading-relaxed mt-auto" style={{ color: 'var(--text-secondary)' }}>
-                  {step.description}
-                </p>
-
-                {/* Bottom accent line on hover */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-500 scale-x-0 group-hover:scale-x-100 origin-left"
-                  style={{ background: 'var(--accent)' }}
-                />
-              </div>
-            </ScrollReveal>
-          ))}
+                    {/* Arrow on hover */}
+                    <div className="shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-10px] group-hover:translate-x-0">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
