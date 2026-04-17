@@ -1,35 +1,39 @@
 'use client';
 
 const clients = [
-  { name: 'APEC Group', abbr: 'AG' },
-  { name: 'GeoPetroleum', abbr: 'GP' },
-  { name: 'Candonkeys', abbr: 'CK' },
-  { name: 'Metal Products USA', abbr: 'MP' },
-  { name: '5M Wellness', abbr: '5M' },
-  { name: 'My Petro Parts', abbr: 'PP' },
-  { name: 'Grit Digital', abbr: 'GD' },
+  { name: 'APEC Group', abbr: 'AG', logo: '/logos/APEC.webp' },
+  { name: 'GeoPetroleum', abbr: 'GP', logo: '/logos/GeoPetroleum.webp' },
+  { name: 'Candonkeys', abbr: 'CK', logo: '/logos/CanDonkeys.png' },
+  { name: 'Metal Products USA', abbr: 'MP', logo: '/logos/MPC.webp' },
+  { name: '5M Wellness', abbr: '5M', logo: '/logos/5MWellness.png' },
+  { name: 'My Petro Parts', abbr: 'PP', logo: '/logos/MyPetroParts.png' },
+  { name: 'Grit Digital', abbr: 'GD', logo: '/logos/Grit.png' },
 ];
 
-function MockLogo({ name, abbr }: { name: string; abbr: string }) {
+const BG = '#faf8f5';
+
+function ClientLogo({ name, abbr, logo }: { name: string; abbr: string; logo?: string }) {
   return (
-    <div className="flex items-center gap-3 px-8 sm:px-12 shrink-0 select-none">
-      <div
-        className="w-10 h-10 flex items-center justify-center text-sm font-bold tracking-tight"
-        style={{
-          border: '1.5px solid var(--border-color)',
-          color: 'var(--text-muted)',
-          fontFamily: 'var(--font-heading)',
-          background: 'var(--accent-glow)',
-        }}
-      >
-        {abbr}
-      </div>
-      <span
-        className="text-sm font-semibold tracking-wide uppercase whitespace-nowrap"
-        style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', letterSpacing: '0.08em' }}
-      >
-        {name}
-      </span>
+    <div className="flex items-center justify-center px-10 sm:px-14 shrink-0 select-none group/logo">
+      {logo ? (
+        <img
+          src={logo}
+          alt={name}
+          className="h-12 sm:h-14 w-auto object-contain opacity-70 grayscale transition-all duration-500 group-hover/logo:opacity-100 group-hover/logo:grayscale-0"
+        />
+      ) : (
+        <div
+          className="w-14 h-14 flex items-center justify-center text-base font-bold tracking-tight opacity-40 grayscale transition-all duration-500 group-hover/logo:opacity-100 group-hover/logo:grayscale-0"
+          style={{
+            border: '1.5px solid #d4d0c8',
+            color: '#888',
+            fontFamily: 'var(--font-heading)',
+            background: '#f0ece4',
+          }}
+        >
+          {abbr}
+        </div>
+      )}
     </div>
   );
 }
@@ -38,23 +42,32 @@ export default function LogoMarquee() {
   const doubled = [...clients, ...clients];
 
   return (
-    <section className="relative overflow-hidden py-10 sm:py-14" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+    <section
+      className="relative overflow-hidden py-12 sm:py-16"
+      style={{ background: BG }}
+    >
+      {/* Accent line */}
+      <div className="mx-auto mb-6 w-8 h-[3px] rounded-full" style={{ background: 'var(--accent)' }} />
+
       {/* Label */}
-      <div className="text-center mb-6">
-        <span className="text-[10px] tracking-[0.35em] uppercase" style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-heading)' }}>
+      <div className="text-center mb-8">
+        <span
+          className="text-[11px] tracking-[0.3em] uppercase"
+          style={{ color: '#999', fontFamily: 'var(--font-heading)' }}
+        >
           Trusted by forward-thinking companies
         </span>
       </div>
 
       {/* Marquee */}
-      <div className="relative">
+      <div className="relative cursor-grab active:cursor-grabbing">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, var(--bg-secondary), transparent)' }} />
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, var(--bg-secondary), transparent)' }} />
+        <div className="absolute left-0 top-0 bottom-0 w-32 sm:w-48 z-10 pointer-events-none" style={{ background: `linear-gradient(to right, ${BG}, transparent)` }} />
+        <div className="absolute right-0 top-0 bottom-0 w-32 sm:w-48 z-10 pointer-events-none" style={{ background: `linear-gradient(to left, ${BG}, transparent)` }} />
 
         <div className="marquee-track flex items-center" aria-hidden="true">
           {doubled.map((c, i) => (
-            <MockLogo key={`${c.name}-${i}`} name={c.name} abbr={c.abbr} />
+            <ClientLogo key={`${c.name}-${i}`} name={c.name} abbr={c.abbr} logo={c.logo} />
           ))}
         </div>
       </div>
