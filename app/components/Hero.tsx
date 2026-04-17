@@ -136,7 +136,7 @@ export default function Hero() {
           <p className="text-base sm:text-lg mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             We craft high-performance websites and digital products that look stunning, load instantly, and convert like crazy.
           </p>
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <a href="#contact" className="btn-primary px-8 py-4 text-sm">
               Start a Project
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -150,15 +150,15 @@ export default function Hero() {
 
       {/* Bottom stats bar */}
       <div className="relative z-10 border-t grid grid-cols-1 sm:grid-cols-3" style={{ borderColor: 'var(--border-color)' }}>
-        <div ref={s1.ref} className="flex flex-col gap-1 px-6 sm:px-12 lg:px-20 py-6 sm:border-r" style={{ borderColor: 'var(--border-color)' }}>
+        <div ref={s1.ref} className="flex flex-col items-center gap-1 px-6 sm:px-12 lg:px-20 py-6 sm:border-r" style={{ borderColor: 'var(--border-color)' }}>
           <span className="text-4xl sm:text-5xl font-extrabold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent)' }}>{s1.value}+</span>
           <span className="text-xs tracking-widest uppercase" style={{ color: 'var(--text-muted)' }}>Projects Shipped</span>
         </div>
-        <div ref={s2.ref} className="flex flex-col gap-1 px-6 sm:px-12 lg:px-20 py-6 sm:border-r" style={{ borderColor: 'var(--border-color)' }}>
+        <div ref={s2.ref} className="flex flex-col items-center gap-1 px-6 sm:px-12 lg:px-20 py-6 sm:border-r" style={{ borderColor: 'var(--border-color)' }}>
           <span className="text-4xl sm:text-5xl font-extrabold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent)' }}>{s2.value}%</span>
           <span className="text-xs tracking-widest uppercase" style={{ color: 'var(--text-muted)' }}>Client Satisfaction</span>
         </div>
-        <div ref={s3.ref} className="flex flex-col gap-1 px-6 sm:px-12 lg:px-20 py-6">
+        <div ref={s3.ref} className="flex flex-col items-center gap-1 px-6 sm:px-12 lg:px-20 py-6">
           <span className="text-4xl sm:text-5xl font-extrabold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent)' }}>{s3.value.toFixed(1)}&#9733;</span>
           <span className="text-xs tracking-widest uppercase" style={{ color: 'var(--text-muted)' }}>Average Rating</span>
         </div>
