@@ -59,7 +59,7 @@ export default function CTA() {
         <ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 mb-20" style={{ border: '1px solid var(--border-color)' }}>
             {stats.map((s, i) => (
-              <div key={s.label} ref={counters[i].ref} className="flex flex-col gap-1 px-8 py-8 sm:py-10" style={{ borderRight: i < 2 ? '1px solid var(--border-color)' : 'none' }}>
+              <div key={s.label} ref={counters[i].ref} className="flex flex-col items-center gap-1 px-8 py-8 sm:py-10" style={{ borderRight: i < 2 ? '1px solid var(--border-color)' : 'none' }}>
                 <span className="text-5xl sm:text-6xl font-extrabold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent)' }}>{counters[i].display}</span>
                 <span className="text-xs tracking-widest uppercase" style={{ color: 'var(--text-muted)' }}>{s.label}</span>
               </div>
