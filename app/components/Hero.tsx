@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import ParticleSphere from './ParticleSphere';
 
 const WORDS = ['Digital', 'Creative', 'Powerful', 'Blazing', 'Premium', 'Killer'];
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -101,6 +102,9 @@ export default function Hero() {
       {/* Cursor spotlight */}
       <div ref={spotRef} className="absolute inset-0 pointer-events-none z-[1]" />
 
+      {/* Particle sphere (follows cursor) */}
+      <ParticleSphere />
+
       {/* Grid overlay */}
       <div className="absolute inset-0 pointer-events-none z-0" style={{
         backgroundImage: 'repeating-linear-gradient(90deg, rgba(255,94,26,0.03) 0px, rgba(255,94,26,0.03) 1px, transparent 1px, transparent 100px), repeating-linear-gradient(0deg, rgba(255,94,26,0.03) 0px, rgba(255,94,26,0.03) 1px, transparent 1px, transparent 100px)',
@@ -112,7 +116,7 @@ export default function Hero() {
         <div className="flex items-center gap-3 mb-8 animate-[fadeInUp_0.6s_0.1s_both]">
           <div className="w-3 h-3" style={{ background: 'var(--accent)' }} />
           <span className="text-xs tracking-[0.3em] uppercase" style={{ color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}>
-            Digital Product Studio
+            OrangeLabs &mdash; Digital Product Studio
           </span>
         </div>
 
@@ -134,7 +138,10 @@ export default function Hero() {
         {/* Sub + CTAs */}
         <div className="max-w-xl animate-[fadeInUp_0.6s_0.7s_both]">
           <p className="text-base sm:text-lg mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            We craft high-performance websites and digital products that look stunning, load instantly, and convert like crazy.
+            <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+              Orange<span className="gradient-text">Labs</span>
+            </span>{' '}
+            crafts high-performance websites and digital products that look stunning, load instantly, and convert like crazy.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a href="#contact" className="btn-primary px-8 py-4 text-sm">
