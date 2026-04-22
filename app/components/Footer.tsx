@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 const links = {
   services: [
     { label: 'Web Development', href: '#services' },
@@ -26,10 +28,17 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 flex items-center justify-center" style={{ background: 'var(--accent)' }}>
-                <span className="text-white font-extrabold text-sm" style={{ fontFamily: 'var(--font-heading)' }}>O</span>
-              </div>
-              <span className="font-extrabold text-lg tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+              <Image
+                src="/logos/OrangeLabs.png"
+                alt="OrangeLabs"
+                width={160}
+                height={40}
+                className="h-9 w-auto"
+              />
+              <span
+                className="font-extrabold text-lg tracking-tight leading-none"
+                style={{ fontFamily: 'var(--font-heading)' }}
+              >
                 Orange<span className="gradient-text">Labs</span>
               </span>
             </div>

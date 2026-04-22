@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
@@ -48,14 +49,20 @@ export default function Header() {
               onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               className="flex items-center gap-2.5 group relative z-[60]"
             >
-              <div className="w-9 h-9 flex items-center justify-center" style={{ background: 'var(--accent)' }}>
-                <span className="text-white font-extrabold text-sm" style={{ fontFamily: 'var(--font-heading)' }}>O</span>
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="font-extrabold text-lg tracking-tight" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}>
-                  Orange<span className="gradient-text">Labs</span>
-                </span>
-              </div>
+              <Image
+                src="/logos/OrangeLabs.png"
+                alt="OrangeLabs"
+                width={160}
+                height={40}
+                priority
+                className="h-9 w-auto"
+              />
+              <span
+                className="font-extrabold text-lg tracking-tight leading-none"
+                style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}
+              >
+                Orange<span className="gradient-text">Labs</span>
+              </span>
             </a>
 
             {/* Desktop Nav */}
